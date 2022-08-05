@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>test-appium-project</module>
+        <module>test-java-project</module>
         <module>test-selenium-project</module>
     </modules>
 
