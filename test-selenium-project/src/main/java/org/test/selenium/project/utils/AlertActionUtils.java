@@ -1,8 +1,8 @@
-package org.test.task.selenium.utils;
+package org.test.selenium.project.utils;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.test.task.selenium.driver.DriverManager;
+import org.test.selenium.project.driver.DriverManager;
 
 import java.time.Duration;
 

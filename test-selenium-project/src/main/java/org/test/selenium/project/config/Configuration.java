@@ -1,4 +1,4 @@
-package org.test.task.selenium.config;
+package org.test.selenium.project.config;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.LoadPolicy;

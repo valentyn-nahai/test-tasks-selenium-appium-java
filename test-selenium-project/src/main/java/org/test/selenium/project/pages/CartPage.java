@@ -1,4 +1,4 @@
-package org.test.task.selenium.pages;
+package org.test.selenium.project.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

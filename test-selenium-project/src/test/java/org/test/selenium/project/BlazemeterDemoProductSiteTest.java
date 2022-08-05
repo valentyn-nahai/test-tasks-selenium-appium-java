@@ -1,12 +1,12 @@
-package org.test.task.selenium;
+package org.test.selenium.project;
 
-import org.test.task.selenium.pages.CartPage;
-import org.test.task.selenium.pages.HeaderPage;
-import org.test.task.selenium.pages.ProductPage;
-import org.test.task.selenium.pages.ProductStorePage;
+import org.test.selenium.project.pages.CartPage;
+import org.test.selenium.project.pages.HeaderPage;
+import org.test.selenium.project.pages.ProductPage;
+import org.test.selenium.project.pages.ProductStorePage;
 import org.testng.annotations.Test;
 
-import static org.test.task.selenium.utils.AlertActionUtils.acceptAlert;
+import static org.test.selenium.project.utils.AlertActionUtils.acceptAlert;
 
 
 public class BlazemeterDemoProductSiteTest extends BaseWebTest {

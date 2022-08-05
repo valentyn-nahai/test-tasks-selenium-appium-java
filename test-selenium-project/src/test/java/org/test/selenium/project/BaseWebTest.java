@@ -1,11 +1,10 @@
-package org.test.task.selenium;
+package org.test.selenium.project;
 
 import org.openqa.selenium.WebDriver;
-import org.test.task.selenium.driver.DriverManager;
-import org.test.task.selenium.driver.TargetFactory;
+import org.test.selenium.project.config.ConfigurationManager;
+import org.test.selenium.project.driver.DriverManager;
+import org.test.selenium.project.driver.TargetFactory;
 import org.testng.annotations.*;
-
-import static org.test.task.selenium.config.ConfigurationManager.configuration;
 
 
 public abstract class BaseWebTest {
@@ -16,7 +15,7 @@ public abstract class BaseWebTest {
         WebDriver driver = new TargetFactory().createInstance(browser);
         DriverManager.setDriver(driver);
 
-        DriverManager.getDriver().get(configuration().url());
+        DriverManager.getDriver().get(ConfigurationManager.configuration().url());
     }
 
     @AfterMethod(alwaysRun = true)

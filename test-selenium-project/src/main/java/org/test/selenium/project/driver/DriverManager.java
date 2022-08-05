@@ -1,4 +1,4 @@
-package org.test.task.selenium.driver;
+package org.test.selenium.project.driver;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;

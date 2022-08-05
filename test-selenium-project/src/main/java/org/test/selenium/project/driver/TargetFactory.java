@@ -1,21 +1,20 @@
-package org.test.task.selenium.driver;
+package org.test.selenium.project.driver;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.test.selenium.project.config.ConfigurationManager;
 
 import java.net.URL;
-
-import static org.test.task.selenium.config.ConfigurationManager.configuration;
 
 public class TargetFactory {
 
     private static final Logger logger = LogManager.getLogger(TargetFactory.class);
 
     public WebDriver createInstance(String browser) {
-        Target target = Target.valueOf(configuration().target().toUpperCase());
+        Target target = Target.valueOf(ConfigurationManager.configuration().target().toUpperCase());
         WebDriver webdriver;
 
         switch (target) {
@@ -34,7 +33,7 @@ public class TargetFactory {
     private RemoteWebDriver createRemoteInstance(MutableCapabilities capability) {
         RemoteWebDriver remoteWebDriver = null;
         try {
-            String gridURL = String.format("http://%s:%s", configuration().gridUrl(), configuration().gridPort());
+            String gridURL = String.format("http://%s:%s", ConfigurationManager.configuration().gridUrl(), ConfigurationManager.configuration().gridPort());
 
             remoteWebDriver = new RemoteWebDriver(new URL(gridURL), capability);
         } catch (java.net.MalformedURLException e) {

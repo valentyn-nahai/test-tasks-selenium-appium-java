@@ -1,4 +1,4 @@
-package org.test.task.selenium.driver;
+package org.test.selenium.project.driver;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -17,9 +17,9 @@ import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.AbstractDriverOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
+import org.test.selenium.project.config.ConfigurationManager;
 
 import static java.lang.Boolean.TRUE;
-import static org.test.task.selenium.config.ConfigurationManager.configuration;
 
 public enum BrowserFactory {
 
@@ -37,7 +37,7 @@ public enum BrowserFactory {
             chromeOptions.addArguments(START_MAXIMIZED);
             chromeOptions.addArguments("--disable-infobars");
             chromeOptions.addArguments("--disable-notifications");
-            chromeOptions.setHeadless(configuration().headless());
+            chromeOptions.setHeadless(ConfigurationManager.configuration().headless());
 
             return chromeOptions;
         }
@@ -53,7 +53,7 @@ public enum BrowserFactory {
         public FirefoxOptions getOptions() {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments(START_MAXIMIZED);
-            firefoxOptions.setHeadless(configuration().headless());
+            firefoxOptions.setHeadless(ConfigurationManager.configuration().headless());
 
             return firefoxOptions;
         }
@@ -69,7 +69,7 @@ public enum BrowserFactory {
         public EdgeOptions getOptions() {
             EdgeOptions edgeOptions = new EdgeOptions();
             edgeOptions.addArguments(START_MAXIMIZED);
-            edgeOptions.setHeadless(configuration().headless());
+            edgeOptions.setHeadless(ConfigurationManager.configuration().headless());
 
             return edgeOptions;
         }
@@ -86,7 +86,7 @@ public enum BrowserFactory {
             SafariOptions safariOptions = new SafariOptions();
             safariOptions.setAutomaticInspection(false);
 
-            if (TRUE.equals(configuration().headless()))
+            if (TRUE.equals(ConfigurationManager.configuration().headless()))
                 throw new IllegalStateException(String.format("Headless not supported for %s browser", safariOptions.getBrowserName()));
 
             return safariOptions;
@@ -106,7 +106,7 @@ public enum BrowserFactory {
             operaOptions.addArguments("--disable-infobars");
             operaOptions.addArguments("--disable-notifications");
 
-            if (TRUE.equals(configuration().headless()))
+            if (TRUE.equals(ConfigurationManager.configuration().headless()))
                 throw new IllegalStateException(String.format("Headless not supported for %s browser", operaOptions.getBrowserName()));
 
             return operaOptions;
@@ -126,7 +126,7 @@ public enum BrowserFactory {
             internetExplorerOptions.takeFullPageScreenshot();
             internetExplorerOptions.introduceFlakinessByIgnoringSecurityDomains();
 
-            if (TRUE.equals(configuration().headless()))
+            if (TRUE.equals(ConfigurationManager.configuration().headless()))
                 throw new IllegalStateException(String.format("Headless not supported for %s browser", internetExplorerOptions.getBrowserName()));
 
             return internetExplorerOptions;

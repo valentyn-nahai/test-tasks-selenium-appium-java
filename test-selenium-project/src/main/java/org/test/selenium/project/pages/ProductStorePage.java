@@ -1,9 +1,7 @@
-package org.test.task.selenium.pages;
+package org.test.selenium.project.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.test.task.selenium.driver.DriverManager;
 
 import java.util.List;
 
